@@ -1,0 +1,28 @@
+---
+interface Props {
+  price: number;
+}
+
+const { price } = Astro.props;
+---
+
+<a href={`https://your-payment-link/${price}`} class="button">
+  Buy me {price === 1 ? 'a' : price} tea{price > 1 ? 's' : ''} ({price * 5}$)
+</a>
+
+<style>
+  .button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 9999px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+  }
+
+  .button:hover {
+    background: var(--accent-light);
+  }
+</style>

@@ -1,0 +1,139 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TeaCup from '../components/TeaCup.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Buy Me a Tea">
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Support My Work</h1>
+        <p class="subtitle">Help fuel my creativity with a cup of tea ✨</p>
+      </div>
+      <TeaCup />
+    </section>
+
+    <section id="support" class="support-section">
+      <div class="support-grid">
+        <div class="support-card">
+          <h3>Single Tea</h3>
+          <p>Perfect for a quick boost</p>
+          <Button price={1} />
+        </div>
+        <div class="support-card featured">
+          <div class="popular-tag">Most Popular</div>
+          <h3>Tea Party</h3>
+          <p>Share the love with multiple teas</p>
+          <Button price={3} />
+        </div>
+        <div class="support-card">
+          <h3>Tea Collection</h3>
+          <p>For the true tea enthusiasts</p>
+          <Button price={5} />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .hero-content {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+  }
+
+  .support-section {
+    padding: 4rem 0;
+  }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .support-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s;
+  }
+
+  .support-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .featured {
+    border: 2px solid var(--primary);
+  }
+
+  .popular-tag {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .support-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .support-card p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero {
+      min-height: 40vh;
+      padding: 2rem 0;
+    }
+
+    .support-section {
+      padding: 2rem 0;
+    }
+  }
+</style>

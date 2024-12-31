@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+ 
+---
+
+<Layout title="about page">
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>About My Work</h1>
+     
+      </div>
+ 
+    </section>
+
+     
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 0;
+  }
+
+  .hero-content {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+
+  
+</style>
